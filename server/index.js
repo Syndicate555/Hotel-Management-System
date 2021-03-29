@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT
+
 const pool = require("./db")
+const morgan = require('morgan')
 const cors = require("cors")
 require('dotenv').config
+app.use(morgan('combined'))
+
 // Middlewares
 app.use(cors())
 app.use(express.json()) // Lets us access req.body
@@ -14,10 +17,11 @@ app.use(express.json()) // Lets us access req.body
 
 app.post("/todos", async (req, res) => {
  try {
-  const { description } = req.body;
+  const { description, fname, date } = req.body;
 
   console.log(description)
-  const newTodo = await pool.query("INSERT INTO todos.todo (description) VALUES($1)", [ description ])
+  const newTodo = await pool.query("INSERT INTO todos.todo (description,fname,date_entry) VALUES($1,$2,$3)", [ description, fname, date ])
+  console.log(description)
   res.json(newTodo)
 
 
@@ -41,6 +45,7 @@ app.get("/todos", async (req, res) => {
  }
 })
 
+const PORT = process.env.PORT
 app.listen(PORT, () => {
  console.log(`Server has started on PORT ${PORT}`)
 

@@ -813,6 +813,7 @@ INSERT INTO EMPLOYEE VALUES ('96415274', 'Chris01', 'VEYjB4', 48, 'Chris', 'Tuck
 INSERT INTO EMPLOYEE VALUES ('59939865', 'Maudie01', '6R8i9Z', 48, 'Maudie', 'Panek', 'Manager', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada');
 INSERT INTO EMPLOYEE VALUES ('71121008', 'David01', 'GqucFd', 48, 'David', 'Lui', 'Chef', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada');
 
+
 -- *****************************
 -- Inserting Values Customers
 -- ******************************
