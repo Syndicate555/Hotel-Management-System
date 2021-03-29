@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 5000
+const PORT = 3000
 const pool = require("./db")
 const cors = require("cors")
 require('dotenv').config
@@ -20,11 +20,25 @@ app.post("/todos", async (req, res) => {
   const newTodo = await pool.query("INSERT INTO todos.todo (description) VALUES($1)", [ description ])
   res.json(newTodo)
 
+
  } catch (error) {
   console.error(error.message)
 
  }
 
+})
+
+
+// get all todos 
+app.get("/todos", async (req, res) => {
+ try {
+  const allTodos = await pool.query("SELECT * FROM todos.todo")
+  res.json(allTodos.rows)
+
+ } catch (error) {
+  console.error(error.message)
+
+ }
 })
 
 app.listen(PORT, () => {
