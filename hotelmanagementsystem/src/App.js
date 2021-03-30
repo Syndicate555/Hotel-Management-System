@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import EmployeeLookup from "./components/EmployeeLookup"
 import RoomSearch from "./components/RoomSearch"
 import ConfirmCustomer from './components/ConfirmCustomer'
+import CustomerPayment from './components/CustomerPayment'
 function App() {
 
 
@@ -28,6 +29,7 @@ function App() {
 
           </Route>
           <Route path="/customer-payment">
+            <CustomerPayment />
 
           </Route>
           <Route path="/">

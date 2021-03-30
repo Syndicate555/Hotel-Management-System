@@ -1,8 +1,6 @@
 
 import React, { Fragment, useState } from "react";
-import DatePicker from "react-datepicker";
 
-import "react-datepicker/dist/react-datepicker.css";
 
 function RoomSearch() {
  const [ rooms, setRooms ] = useState([]);

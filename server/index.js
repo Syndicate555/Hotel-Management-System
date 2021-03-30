@@ -47,6 +47,18 @@ app.post("/booking-confirm", async (req, res) => {
  }
 
 })
+app.post("/payment-confirm", async (req, res) => {
+ try {
+  const { room } = req.body;
+  const newRent = await pool.query("UPDATE ehotel.room SET pending_balance = 'true' WHERE room_num = $1  ", [ room ])
+  res.send("The Payment for the customer has been received")
+  console.log(req.body)
+ } catch (error) {
+  console.error(error.message)
+
+ }
+
+})
 
 
 // get all todos 
