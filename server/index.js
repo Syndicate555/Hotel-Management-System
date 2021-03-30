@@ -63,7 +63,7 @@ app.get("/rooms", async (req, res) => {
 // For employees to view all the rooms that are booked and rented
 app.get("/all-rooms", async (req, res) => {
  try {
-  const allRooms = await pool.query("SELECT * FROM ehotel.room WHERE status = 'available' or 'booked'")
+  const allRooms = await pool.query("SELECT * FROM ehotel.room where status = 'booked'or status = 'available'")
   res.json(allRooms.rows)
  } catch (error) {
   console.error(error.message)

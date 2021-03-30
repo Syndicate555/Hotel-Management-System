@@ -1,4 +1,4 @@
-import React from 'react'
+
 import React, { Fragment, useEffect, useState } from "react";
 
 function EmployeeLookup() {
@@ -14,6 +14,11 @@ function EmployeeLookup() {
    console.error(err.message);
   }
  };
+ useEffect(() => {
+  getRooms();
+ }, []);
+
+
 
  return (
   <Fragment>

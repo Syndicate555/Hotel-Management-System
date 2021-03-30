@@ -2,7 +2,7 @@ import './App.css';
 import React, { Fragment, useEffect, useState } from "react";
 import { useHistory, Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home"
-// import EmployeeLookup from "./components/EmployeeLookup"
+import EmployeeLookup from "./components/EmployeeLookup"
 import RoomSearch from "./components/RoomSearch"
 function App() {
 
@@ -14,9 +14,9 @@ function App() {
 
           <Route path="/customer-search" >
             <RoomSearch />
-
           </Route>
           <Route path="/employee-lookup">
+            <EmployeeLookup />
 
           </Route>
           <Route path="/confirm-customer">
