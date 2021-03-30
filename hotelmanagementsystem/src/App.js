@@ -4,6 +4,7 @@ import { useHistory, Link, BrowserRouter as Router, Switch, Route } from "react-
 import Home from "./components/Home"
 import EmployeeLookup from "./components/EmployeeLookup"
 import RoomSearch from "./components/RoomSearch"
+import ConfirmCustomer from './components/ConfirmCustomer'
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
 
           </Route>
           <Route path="/confirm-customer">
+            <ConfirmCustomer />
 
           </Route>
           <Route path="/customer-registration">
