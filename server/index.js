@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const fetch = require("node-fetch");
+const axios = require('axios').default;
 const pool = require("./db")
 const morgan = require('morgan')
 const cors = require("cors")
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const bodyParser = require('body-parser')
 require('dotenv').config
 app.use(morgan('dev'))
@@ -38,6 +41,7 @@ app.post("/booking-confirm", async (req, res) => {
 
   const newTodo = await pool.query("UPDATE ehotel.room SET status = 'rented',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
   res.send("The Renting for the customer has been confirmed")
+  console.log(req.body)
  } catch (error) {
   console.error(error.message)
 
@@ -47,10 +51,11 @@ app.post("/booking-confirm", async (req, res) => {
 
 
 // get all todos 
-app.get("/todos", async (req, res) => {
+app.get("/rooms", async (req, res) => {
  try {
-  const allTodos = await pool.query("SELECT * FROM ehotel.room WHERE status = 'booked'")
-  res.json(allTodos.rows)
+  const allRooms = await pool.query("SELECT * FROM ehotel.room WHERE status = 'rented'")
+  res.json(allRooms.rows)
+
 
  } catch (error) {
   console.error(error.message)
@@ -63,3 +68,28 @@ app.listen(PORT, () => {
  console.log(`Server has started on PORT ${PORT}`)
 
 })
+// const xhttp = new XMLHttpRequest();
+// xhttp.open("GET", "http://localhost:3000/rooms", false);
+// xhttp.send();
+// const rooms = xhttp.responseText;
+// console.log(rooms)
+
+// axios.get('http://localhost:3000/rooms')
+//  .then(function (response) {
+//   console.log(response.json())
+//  })
+//  .catch(function (error) {
+//   // handle error
+//   console.log(error);
+//  })
+
+const getRooms = async () => {
+ try {
+  const response = await fetch("http://localhost:3000/rooms");
+  const jsonData = await response.json();
+
+  console.log(jsonData)
+ } catch (err) {
+  console.error(err.message);
+ }
+}

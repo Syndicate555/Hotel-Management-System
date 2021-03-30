@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React, { Fragment, useEffect, useState } from "react";
 
 function App() {
+  const [ todos, setTodos ] = useState([]);
+  const getTodos = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/rooms");
+      const jsonData = await response.json();
+
+      setTodos(jsonData);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  useEffect(() => {
+    getTodos();
+  }, []);
+
+  console.log(todos);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Test</h1>
+
+
     </div>
   );
 }
