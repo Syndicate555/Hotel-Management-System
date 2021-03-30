@@ -53,13 +53,20 @@ app.post("/booking-confirm", async (req, res) => {
 // get all todos 
 app.get("/rooms", async (req, res) => {
  try {
-  const allRooms = await pool.query("SELECT * FROM ehotel.room WHERE status = 'rented'")
+  const allRooms = await pool.query("SELECT * FROM ehotel.room WHERE status = 'available'")
   res.json(allRooms.rows)
-
-
  } catch (error) {
   console.error(error.message)
+ }
+})
 
+// For employees to view all the rooms that are booked and rented
+app.get("/all-rooms", async (req, res) => {
+ try {
+  const allRooms = await pool.query("SELECT * FROM ehotel.room WHERE status = 'available' or 'booked'")
+  res.json(allRooms.rows)
+ } catch (error) {
+  console.error(error.message)
  }
 })
 

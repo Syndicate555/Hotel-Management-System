@@ -1,30 +1,44 @@
-
 import './App.css';
 import React, { Fragment, useEffect, useState } from "react";
-
+import { useHistory, Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home"
+// import EmployeeLookup from "./components/EmployeeLookup"
+import RoomSearch from "./components/RoomSearch"
 function App() {
-  const [ todos, setTodos ] = useState([]);
-  const getTodos = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/rooms");
-      const jsonData = await response.json();
 
-      setTodos(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-  useEffect(() => {
-    getTodos();
-  }, []);
 
-  console.log(todos);
   return (
-    <div className="App">
-      <h1>Test</h1>
+    <div>
+      <Router>
+        <Switch>
 
+          <Route path="/customer-search" >
+            <RoomSearch />
+
+          </Route>
+          <Route path="/employee-lookup">
+
+          </Route>
+          <Route path="/confirm-customer">
+
+          </Route>
+          <Route path="/customer-registration">
+
+          </Route>
+          <Route path="/customer-payment">
+
+          </Route>
+          <Route path="/">
+            <Home />
+
+          </Route>
+        </Switch>
+
+      </Router>
 
     </div>
+
+
   );
 }
 
