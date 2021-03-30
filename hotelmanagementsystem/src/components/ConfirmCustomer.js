@@ -1,12 +1,33 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 const ConfirmCustomer = () => {
+ const [ room, setRoom ] = useState(0)
+ const [ start, setStart ] = useState(0)
+ const [ end, setEnd ] = useState(0)
+
+ const onSubmitForm = async e => {
+  e.preventDefault();
+  try {
+   const body = { start, end, room };
+   const response = await fetch("http://localhost:3000/booking-confirm", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+   });
+
+   window.location = "/";
+  } catch (err) {
+   console.error(err.message);
+  }
+ };
+
+
  return (
   <div className="container">
    <hr />
    <h1>Renting Confirmation</h1>
    <hr />
-   <form onSubmit>
+   <form onSubmit={onSubmitForm}>
     <div className="form-group">
      <label htmlFor="ISBN">Customer Name</label>
      <input className="form-control" name="isbn" />

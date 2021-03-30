@@ -1,5 +1,5 @@
 
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -22,20 +22,24 @@ function RoomSearch() {
 
  return (
   <Fragment>
-   <div style={{ display: "flex", flexDirection: "column", textAlign: "center" }}>
+   <div style={{ textAlign: "center" }}>
     <br />
     <br />
 
     <label htmlFor=""> Select start Date</label>
     <br />
-    <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+    <input type="date" id="start" name="start" defaultValue="2018-07-22" min="2018-01-01" max="2038-12-31" onClick />
+    <br />
     <br />
     <label htmlFor=""> Select End Date</label>
     <br />
-    <DatePicker selected={endDate} onChange={date => setEndDate(date)} />
+    <br />
+    <input type="date" id="start" name="start" defaultValue="2018-07-22" min="2018-01-01" max="2038-12-31" onClick />
     <br />
     <br />
     <button className="btn btn-primary" onClick={getRooms} style={{ textAlign: "center" }}>Show Rooms</button>
+    <br />
+    <br />
     <br />
 
 
@@ -50,7 +54,7 @@ function RoomSearch() {
      <tr>
       <th>Room Number</th>
       <th>Capacity</th>
-      <th>Price</th>
+      <th>Price/night</th>
       <th></th>
      </tr>
     </thead>
@@ -60,7 +64,7 @@ function RoomSearch() {
       <tr key={room.hotel_id}>
        <td>{room.room_num}</td>
        <td>{room.capacity}</td>
-       <td>{room.price}</td>
+       <td>${room.price}</td>
 
        <td>
         <button
