@@ -38,8 +38,7 @@ app.post("/todos", async (req, res) => {
 app.post("/booking-confirm", async (req, res) => {
  try {
   const { start, end, room } = req.body;
-
-  const newTodo = await pool.query("UPDATE ehotel.room SET status = 'rented',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
+  const newRent = await pool.query("UPDATE ehotel.room SET status = 'rented',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
   res.send("The Renting for the customer has been confirmed")
   console.log(req.body)
  } catch (error) {
