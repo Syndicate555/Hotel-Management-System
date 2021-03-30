@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <title>Document</title>
+</head>
+
+<body>
+ <div class="container">
+  <hr>
+  <h1>Renting Confirmation</h1>
+  <hr>
+
+  <form action="/booking-confirm" method="POST">
+   <div class="form-group">
+    <label for="ISBN">Customer Name</label>
+    <input class="form-control" name="isbn">
+   </div>
+
+   <div class="form-group">
+    <label for="Title">Room Number</label>
+    <input class="form-control" name="room">
+   </div>
+   <div class="form-group">
+    <label for="start">Start date:</label>
+    <input type="date" id="start" name="start" value="2018-07-22" min="2018-01-01" max="2038-12-31">
+    <br>
+    <br>
+    <label for="start">End date:</label>
+    <input type="date" id="start" name="end" value="2018-07-22" min="2018-01-01" max="2038-12-31">
+   </div>
+
+
+   <button type="submit" class="btn btn-primary">Confirm Renting</button>
+  </form>
+ </div>
+
+</body>
+
+</html>

@@ -24,9 +24,20 @@ app.post("/todos", async (req, res) => {
 
   const newTodo = await pool.query("UPDATE todos.todo SET fname = $1 WHERE todo_id = 1", [ fname ])
   console.log(fname)
+ } catch (error) {
+  console.error(error.message)
 
+ }
 
+})
 
+// Employee will confirm the booking of a customer after they arrive
+app.post("/booking-confirm", async (req, res) => {
+ try {
+  const { start, end, room } = req.body;
+
+  const newTodo = await pool.query("UPDATE ehotel.room SET status = 'rented',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
+  res.send("The Renting for the customer has been confirmed")
  } catch (error) {
   console.error(error.message)
 
@@ -38,7 +49,7 @@ app.post("/todos", async (req, res) => {
 // get all todos 
 app.get("/todos", async (req, res) => {
  try {
-  const allTodos = await pool.query("SELECT * FROM todos.todo")
+  const allTodos = await pool.query("SELECT * FROM ehotel.room WHERE status = 'booked'")
   res.json(allTodos.rows)
 
  } catch (error) {
