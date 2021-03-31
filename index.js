@@ -6,7 +6,6 @@ const axios = require('axios').default;
 const pool = require("./db")
 const morgan = require('morgan')
 const cors = require("cors")
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const bodyParser = require('body-parser')
 require('dotenv').config
 app.use(morgan('dev'))
@@ -19,21 +18,6 @@ app.use(express.urlencoded({ extended: false }))
 
 //Routes//
 
-// create a todo
-
-app.post("/todos", async (req, res) => {
- try {
-  const { description, fname, date } = req.body;
-
-  const newTodo = await pool.query("UPDATE todos.todo SET fname = $1 WHERE todo_id = 1", [ fname ])
-  console.log(fname)
- } catch (error) {
-  console.error(error.message)
-
- }
-
-})
-
 // Employee will confirm the booking of a customer after they arrive
 app.post("/booking-confirm", async (req, res) => {
  try {
@@ -45,8 +29,21 @@ app.post("/booking-confirm", async (req, res) => {
   console.error(error.message)
 
  }
-
 })
+app.post("/customer-register", async (req, res) => {
+ try {
+  const { sin, fname, lname, rdate, city, country, room, start, end, } = req.body;
+  const newCustomer = await pool.query("INSERT ehotel.customer (ssn_sin,fname,lname,registration_date,city,country) values($1,$2,$3,$4,$5,$6)  ", [ sin, fname, lname, rdate, city, country ])
+  const newRent = await pool.query("UPDATE ehotel.room SET status = 'rented',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
+
+  res.send("The Renting for the customer has been confirmed")
+  console.log(req.body)
+ } catch (error) {
+  console.error(error.message)
+
+ }
+})
+
 app.post("/payment-confirm", async (req, res) => {
  try {
   const { room } = req.body;
