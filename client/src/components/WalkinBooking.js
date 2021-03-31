@@ -39,7 +39,7 @@ const WalkinBooking = () => {
          </div>
 
 
-         <div className="col-sm-6 mb-3 mb-sm-0"><button className="btn btn-primary  text-white btn-user" type="submit" >Confirm Registration</button></div>
+         <div className="col-sm-6 mb-3 mb-sm-0"><button className="btn btn-primary  text-white btn-user" type="submit" style={{ padding: "None" }} >Confirm Registration</button></div>
 
 
 
