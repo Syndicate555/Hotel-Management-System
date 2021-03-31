@@ -6,6 +6,7 @@ import EmployeeLookup from "./components/EmployeeLookup"
 import RoomSearch from "./components/RoomSearch"
 import ConfirmCustomer from './components/ConfirmCustomer'
 import CustomerPayment from './components/CustomerPayment'
+import WalkinBooking from './components/WalkinBooking'
 function App() {
 
 
@@ -26,6 +27,7 @@ function App() {
 
           </Route>
           <Route path="/customer-registration">
+            <WalkinBooking />
 
           </Route>
           <Route path="/customer-payment">
