@@ -24,6 +24,7 @@ app.post("/booking-confirm", async (req, res) => {
   const { start, end, room } = req.body;
   const newRent = await pool.query("UPDATE ehotel.room SET status = 'rented',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
   res.send("The Renting for the customer has been confirmed")
+  res.redirect("http://localhost:4545/")
   console.log(req.body)
  } catch (error) {
   console.error(error.message)
@@ -102,13 +103,13 @@ app.listen(PORT, () => {
 //   console.log(error);
 //  })
 
-const getRooms = async () => {
- try {
-  const response = await fetch("http://localhost:3000/rooms");
-  const jsonData = await response.json();
+// const getRooms = async () => {
+//  try {
+//   const response = await fetch("http://localhost:3000/rooms");
+//   const jsonData = await response.json();
 
-  console.log(jsonData)
- } catch (err) {
-  console.error(err.message);
- }
-}
+//   console.log(jsonData)
+//  } catch (err) {
+//   console.error(err.message);
+//  }
+// }

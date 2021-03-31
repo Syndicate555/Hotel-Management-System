@@ -1,6 +1,6 @@
 import './App.css';
-import React, { Fragment, useEffect, useState } from "react";
-import { useHistory, Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home"
 import EmployeeLookup from "./components/EmployeeLookup"
 import RoomSearch from "./components/RoomSearch"

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const CustomerPayment = () => {
- const [ payment, setPayment ] = useState(false)
+ // const [ payment, setPayment ] = useState(false)
  const [ room, setRoom ] = useState(0)
 
  const onSubmitForm = async e => {

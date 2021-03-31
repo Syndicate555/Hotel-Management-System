@@ -4,8 +4,8 @@ import React, { Fragment, useState } from "react";
 
 function RoomSearch() {
        const [ rooms, setRooms ] = useState([]);
-       const [ startDate, setStartDate ] = useState(new Date());
-       const [ endDate, setEndDate ] = useState(new Date());
+       // const [ startDate, setStartDate ] = useState(new Date());
+       // const [ endDate, setEndDate ] = useState(new Date());
 
        const getRooms = async () => {
               try {
