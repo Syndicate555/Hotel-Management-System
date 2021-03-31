@@ -20,13 +20,20 @@ const WalkinBooking = () => {
         </div>
         <form className="user" >
          <div className="form-group row">
-          <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" type={first_name.type} value={first_name.value} onChange={first_name.onChange} id="exampleFirstName" placeholder="First Name" name="first_name" /></div>
-          <div className="col-sm-6"><input className="form-control form-control-user" type={last_name.type} value={last_name.value} onChange={last_name.onChange} id="exampleFirstName" placeholder="Last Name" name="last_name" /></div>
+          <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="first_name" /></div>
+          <div className="col-sm-6"><input className="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Last Name" name="last_name" /></div>
          </div>
-         <div className="form-group" ><input className="form-control form-control-user" type={email.type} value={email.value} onChange={email.onChange} id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Business Email" name="email" /></div>
-         <div className="form-group" ><input className="form-control form-control-user" type={brand_name.type} value={brand_name.value} onChange={brand_name.onChange} id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Brand Name" name="brand_name" /></div>
-         <div className="form-group" ><input className="form-control form-control-user" type={password.type} value={password.value} onChange={password.onChange} id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Password" name="password" /></div>
-         <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>
+         <div className="form-group" ><input className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Business Email" name="email" /></div>
+         <div className="form-group" ><input className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Sin Number" name="email" /></div>
+         <div className="form-group row">
+          <label className="col-sm-6 mb-3 mb-sm-0" htmlFor="">Check In Date</label>
+          <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" defaultValue="2018-07-22" type="date" id="exampleFirstName" placeholder="First Name" name="first_name" /></div>
+          <br />
+          <br />
+          <label className="col-sm-6 mb-3 mb-sm-0" htmlFor="">Check In Date</label>
+          <div className="col-sm-6"><input className="form-control form-control-user" type="date" defaultValue="2018-07-22" id="exampleFirstName" placeholder="Last Name" name="last_name" /></div>
+         </div>
+
 
          <div className="col-sm-6 mb-3 mb-sm-0"><button className="btn btn-primary  text-white btn-user" type="submit" style={{ background: '#8A88F5', border: "none", outline: "none", boxShadow: "none" }}>Save and continue</button></div>
 
