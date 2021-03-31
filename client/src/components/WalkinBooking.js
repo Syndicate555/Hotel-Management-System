@@ -26,9 +26,9 @@ const WalkinBooking = () => {
           <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="first_name" /></div>
           <div className="col-sm-6"><input className="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Last Name" name="last_name" /></div>
          </div>
-         <div className="form-group" ><input className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Business Email" name="email" /></div>
-         <div className="form-group" ><input className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Your Sin Number" name="email" /></div>
-         <div className="form-group" ><input className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Room Number" name="email" /></div>
+         <div className="form-group" ><input className="form-control form-control-user" type="email" placeholder="Your Business Email" required /></div>
+         <div className="form-group" ><input className="form-control form-control-user" type="number" placeholder="Your Sin Number" required /></div>
+         <div className="form-group" ><input className="form-control form-control-user" type="number" placeholder="Room Number" required /></div>
          <div className="form-group row">
           <label className="col-sm-6 mb-3 mb-sm-0" htmlFor="">Check In Date</label>
           <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" defaultValue="2018-07-22" type="date" onChange={e => setStart(e.target.value)} /></div>
