@@ -29,7 +29,7 @@ const WalkinBooking = () => {
    });
    console.log(body)
 
-   window.location = "/";
+   window.location = "/customer-register";
   } catch (err) {
    console.error(err.message);
 
