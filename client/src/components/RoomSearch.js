@@ -10,9 +10,10 @@ function RoomSearch() {
        const getRooms = async () => {
               try {
                      const response = await fetch("http://localhost:3000/rooms");
-                     const jsonData = await response.json();
+                     const allRooms = await response.json();
 
-                     setRooms(jsonData);
+                     setRooms(allRooms);
+                     console.log(allRooms)
               } catch (err) {
                      console.error(err.message);
               }
@@ -52,6 +53,7 @@ function RoomSearch() {
                                    <tr>
                                           <th>Room Number</th>
                                           <th>Capacity</th>
+                                          <th>Mountain/Ocean view Available</th>
                                           <th>Price/night</th>
                                           <th></th>
                                    </tr>
@@ -62,13 +64,13 @@ function RoomSearch() {
                                           <tr key={room.hotel_id}>
                                                  <td>{room.room_num}</td>
                                                  <td>{room.capacity}</td>
+                                                 <td>{room.view}</td>
                                                  <td>${room.price}</td>
 
                                                  <td>
                                                         <button
                                                                className="btn btn-success">
-                                                               Book Room
-                </button>
+                                                               Book Room</button>
                                                  </td>
                                           </tr>
                                    ))}
