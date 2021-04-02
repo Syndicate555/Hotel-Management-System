@@ -1,6 +1,7 @@
 
 import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import styled from 'styled-components';
 
 function RoomSearch() {
        const [ rooms, setRooms ] = useState([]);
