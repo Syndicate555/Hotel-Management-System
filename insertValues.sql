@@ -545,23 +545,23 @@ INSERT INTO ROOM VALUES (490, 48,  'available',4, 400, 'yes', 'no', null, null, 
 
 
 -- *******************************
--- Inserting Values Hotel_Chain
+-- Inserting Values Hotel_Chain 
 -- *******************************
 
 
-INSERT INTO HOTEL_CHAIN VALUES ('Ritz','Rideau Street',16,'Ottawa','Ontario','K1N 5K0', 'Canada', 'Ritz@gmail.com','289-516-8765');
-INSERT INTO HOTEL_CHAIN VALUES ('Mariot','Sam Street',30,'New York','New York','5HG 674', 'United States', 'Mariot@gmail.com','675-876-9042');
-INSERT INTO HOTEL_CHAIN VALUES ('Hotel Plaza','Williams Street',27,'London','England','4HY 786', 'Europe', 'HotelPlaza@gmail.com','456-789-0001');
-INSERT INTO HOTEL_CHAIN VALUES ('Night Inn','Wallaby Street',8,'Kansas City','Kansas','3JR 978', 'United States', 'NightInn@gmail.com','234-456-8765');
-INSERT INTO HOTEL_CHAIN VALUES ('Best Western','Ottawa Street',5,'Vancouver','British Columbia','8PH 453', 'Canada', 'BestWestern@gmail.com','123-678-9023');
-INSERT INTO HOTEL_CHAIN VALUES ('Andaz','325 Dalhousie Street',5,'Ottawa','Ontario','M3A 2G1', 'Canada', 'andaz123@gmail.com','123-456-7890');
+INSERT INTO HOTEL_CHAIN VALUES ('Ritz','Rideau Street',16,'Ottawa','Ontario','K1N 5K0', 'Canada', 'Ritz@gmail.com','289-516-8765',8);
+INSERT INTO HOTEL_CHAIN VALUES ('Mariot','Sam Street',30,'New York','New York','5HG 674', 'United States', 'Mariot@gmail.com','675-876-9042',8);
+INSERT INTO HOTEL_CHAIN VALUES ('Hotel Plaza','Williams Street',27,'London','England','4HY 786', 'Europe', 'HotelPlaza@gmail.com','456-789-0001',8);
+INSERT INTO HOTEL_CHAIN VALUES ('Night Inn','Wallaby Street',8,'Kansas City','Kansas','3JR 978', 'United States', 'NightInn@gmail.com','234-456-8765',8);
+INSERT INTO HOTEL_CHAIN VALUES ('Best Western','Ottawa Street',5,'Vancouver','British Columbia','8PH 453', 'Canada', 'BestWestern@gmail.com','123-678-9023',8);
+INSERT INTO HOTEL_CHAIN VALUES ('Andaz','325 Dalhousie Street',5,'Ottawa','Ontario','M3A 2G1', 'Canada', 'andaz123@gmail.com','123-456-7890',8);
 
 
 
 
--- *******************************
--- Inserting Values Hotel
--- *******************************
+-- ************************************************
+-- Inserting Values Hotel -> 8 Hotels per Chain
+-- **********************************************
 
 INSERT INTO HOTEL VALUES (1, 'Ritz', 0, 40, 3, 'Ritz1@gmail.com', '567-789-0098', 'Mike Street', 78, 'Hamilton', 'Ontario', '6GH 756', 'Canada', 10);
 INSERT INTO HOTEL VALUES (2, 'Ritz', 0, 23, 4, 'Ritz2@gmail.com', '456-675-9876', 'Appleby Street', 90, 'Quebec City', 'Quebec', '5JE 345', 'Canada', 10);
