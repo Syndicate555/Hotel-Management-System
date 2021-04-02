@@ -9,27 +9,24 @@ const WalkinBooking = () => {
  const [ end, setEnd ] = useState(0)
  const [ city, setCity ] = useState("")
  const [ country, setCountry ] = useState("")
+
+
  const onSubmitForm = async e => {
   e.preventDefault();
   try {
    const body = {
-    "sin": sin,
-    "fname": fname,
-    "lname": lname,
-    "city": city,
-    "country": country,
-    "room": room,
-    "start": start,
-    "end": end
+
+    "username": username,
+    "password": password
    };
-   const response = await fetch("http://localhost:3000/customer-register", {
+   const response = await fetch("http://localhost:3000/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body)
    });
    console.log(body)
 
-   window.location = "/customer-register";
+   window.location = "/auth/login";
   } catch (err) {
    console.error(err.message);
 
