@@ -44,10 +44,10 @@ function EmployeeLookup() {
 
                                                  <td>
 
-                                                        <button
+
+                                                        {room.status === 'available' ? <a href="/customer-registration"
                                                                className="btn btn-success">
-                                                               Rent room for customer
-                </button>
+                                                               Rent room for customer</a> : null}
                                                  </td>
                                           </tr>
                                    ))}
