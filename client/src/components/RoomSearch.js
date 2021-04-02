@@ -2,6 +2,7 @@
 import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styled from 'styled-components';
+import { GlobalStyle } from './globalStyles';
 
 const Button = styled.button`
   min-width: 70px;
