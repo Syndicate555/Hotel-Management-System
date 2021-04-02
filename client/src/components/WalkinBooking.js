@@ -15,18 +15,23 @@ const WalkinBooking = () => {
   e.preventDefault();
   try {
    const body = {
-
-    "username": username,
-    "password": password
+    "sin": sin,
+    "fname": fname,
+    "lname": lname,
+    "city": city,
+    "country": country,
+    "room": room,
+    "start": start,
+    "end": end
    };
-   const response = await fetch("http://localhost:3000/", {
+   const response = await fetch("http://localhost:3000/customer-register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body)
    });
    console.log(body)
 
-   window.location = "/auth/login";
+   window.location = "/customer-register";
   } catch (err) {
    console.error(err.message);
 
