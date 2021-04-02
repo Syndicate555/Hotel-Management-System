@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md'
@@ -55,52 +55,40 @@ const CloseModalButton = styled(MdClose)`
   z-index: 10;
 `;
 const CustomerBooking = ({ showModal, setShowModal }) => {
- const modalRef = useRef();
+ const [ room, setRoom ] = useState(0)
+ const [ start, setStart ] = useState(0)
+ const [ end, setEnd ] = useState(0)
 
- const animation = useSpring({
-  config: {
-   duration: 250
-  },
-  opacity: showModal ? 1 : 0,
-  transform: showModal ? `translateY(0%)` : `translateY(-100%)`
- });
-
- const closeModal = e => {
-  if (modalRef.current === e.target) {
-   setShowModal(false);
-  }
- };
-
- const keyPress = useCallback(
-  e => {
-   if (e.key === 'Escape' && showModal) {
-    setShowModal(false);
-    console.log('I pressed');
-   }
-  },
-  [ setShowModal, showModal ]
- );
 
  return (
   <>
-   {showModal ? (
-    <Background onClick={closeModal} ref={modalRef}>
-     <animated.div style={animation}>
-      <ModalWrapper showModal={showModal}>
-
-       <ModalContent>
-        <h1>Are you ready?</h1>
-        <p>Get exclusive access to our next launch.</p>
-        <button>Join Now</button>
-       </ModalContent>
-       <CloseModalButton
-        aria-label='Close modal'
-        onClick={() => setShowModal(prev => !prev)}
-       />
-      </ModalWrapper>
-     </animated.div>
-    </Background>
-   ) : null}
+   <div className="container">
+    <hr />
+    <h1>Renting Confirmation</h1>
+    <hr />
+    <form>
+     <div className="form-group">
+      <label htmlFor="ISBN">Customer Name</label>
+      <input className="form-control" name="isbn" />
+     </div>
+     <div className="form-group">
+      <label htmlFor="Title">Room Number</label>
+      <input className="form-control" name="room" onChange={e => setRoom(e.target.value)} />
+     </div>
+     <div className="form-group">
+      <label htmlFor="start">Start date:</label>
+      <br />
+      <input type="date" id="start" name="start" defaultValue="2018-07-22" min="2018-01-01" max="2038-12-31" onChange={e => setStart(e.target.value)} />
+      <br />
+      <br />
+      <label htmlFor="start">End date:</label>
+      <br />
+      <input type="date" id="start" name="end" defaultValue="2018-07-22" min="2018-01-01" max="2038-12-31" onChange={e => setEnd(e.target.value)} />
+      <br />
+     </div>
+     <button type="submit" className="btn btn-primary">Confirm Renting</button>
+    </form>
+   </div>
   </>
  )
 }

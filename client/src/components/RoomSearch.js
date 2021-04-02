@@ -87,7 +87,7 @@ function RoomSearch() {
                                                  <td>${room.price}</td>
 
                                                  <td >
-                                                        <a className="btn btn-success" onClick={getRooms} style={{ textAlign: "center", color: "white" }}>Book Room</a>
+                                                        <a href="/customer-booking" className="btn btn-success" onClick={getRooms} style={{ textAlign: "center", color: "white" }}>Book Room</a>
 
                                                  </td>
                                           </tr>

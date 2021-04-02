@@ -18,7 +18,7 @@ const Home = () => {
 
          </div>
          <form className="user" style={{ paddingTop: "20px" }} >
-          <div className="form-group"><a href="/customer-search" className="btn btn-primary  text-white btn-user" type="submit" style={{ background: '#3bb1e3', border: "none", outline: "none", boxShadow: "none", width: "100%" }}>Customer Room Search</a></div>
+          <div className="form-group"><a href="/customer-search" className="btn btn-primary  text-white btn-user" type="submit" style={{ background: '#3bb1e3', border: "none", outline: "none", boxShadow: "none", width: "100%" }}>Customer Online Booking</a></div>
           <div className="form-group"><a href="/employee-lookup" className="btn btn-primary  text-white btn-user" type="submit" style={{ background: '#3bb1e3', border: "none", outline: "none", boxShadow: "none", width: "100%" }}>Employee Room Lookup</a></div>
           <div className="form-group"><a href="/confirm-customer" className="btn btn-primary  text-white btn-user" type="submit" style={{ background: '#3bb1e3', border: "none", outline: "none", boxShadow: "none", width: "100%" }}>Confirm Customer Booking</a></div>
           <div className="form-group"><a href="/customer-registration" className="btn btn-primary  text-white btn-user" type="submit" style={{ background: '#3bb1e3', border: "none", outline: "none", boxShadow: "none", width: "100%" }}>Customer Registration - Walk In</a></div>
