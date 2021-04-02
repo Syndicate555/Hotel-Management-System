@@ -3,10 +3,26 @@ import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styled from 'styled-components';
 
+const Button = styled.button`
+  min-width: 70px;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border: none;
+  background: #141414;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+`;
+
 function RoomSearch() {
        const [ rooms, setRooms ] = useState([]);
+       const [ showModal, setShowModal ] = useState(false);
        // const [ startDate, setStartDate ] = useState(new Date());
        // const [ endDate, setEndDate ] = useState(new Date());
+
+       const openModal = () => {
+              setShowModal(prev => !prev);
+       };
 
        const getRooms = async () => {
               try {
@@ -70,9 +86,7 @@ function RoomSearch() {
                                                         <td>${room.price}</td>
 
                                                         <td>
-                                                               <a style={{ color: "white" }}
-                                                                      className="btn btn-success">
-                                                                      Book Room</a>
+                                                               <Button onClick={openModal}>Book Room</Button>
                                                         </td>
                                                  </tr>
                                           ))}
