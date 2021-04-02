@@ -3,90 +3,77 @@ import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md'
 
-const Background = styled.div`
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
-const ModalWrapper = styled.div`
-  width: 800px;
-  height: 500px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  z-index: 10;
-  border-radius: 10px;
-`;
-
-const ModalContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.8;
-  color: #141414;
-  p {
-    margin-bottom: 1rem;
-  }
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
-`;
-
-const CloseModalButton = styled(MdClose)`
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  z-index: 10;
-`;
 const CustomerBooking = ({ showModal, setShowModal }) => {
+ const [ sin, setSin ] = useState(0)
+ const [ fname, setFname ] = useState("")
+ const [ lname, setLname ] = useState("")
  const [ room, setRoom ] = useState(0)
  const [ start, setStart ] = useState(0)
  const [ end, setEnd ] = useState(0)
+ const [ city, setCity ] = useState("")
+ const [ country, setCountry ] = useState("")
+ const onSubmitForm = async e => {
+  e.preventDefault();
+  try {
+   const body = {
+    "sin": sin,
+    "fname": fname,
+    "lname": lname,
+    "city": city,
+    "country": country,
+    "room": room,
+    "start": start,
+    "end": end
+   };
+   const response = await fetch("http://localhost:3000/customer-booking", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+   });
+   console.log(body)
 
+   window.location = "/customer-registration";
+  } catch (err) {
+   console.error(err.message);
+
+  }
+ };
 
  return (
   <>
    <div className="container">
+    <br />
+    <br />
+    <h1>Customer Online Booking</h1>
     <hr />
-    <h1>Renting Confirmation</h1>
-    <hr />
-    <form>
-     <div className="form-group">
-      <label htmlFor="ISBN">Customer Name</label>
-      <input className="form-control" name="isbn" />
+    <form className="user" onSubmit={onSubmitForm} >
+     <div className="form-group row">
+      <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" type="text" placeholder="First Name" onChange={e => setFname(e.target.value)} /></div>
+      <div className="col-sm-6"><input className="form-control form-control-user" type="text" placeholder="Last Name" onChange={e => setLname(e.target.value)} /></div>
      </div>
-     <div className="form-group">
-      <label htmlFor="Title">Room Number</label>
-      <input className="form-control" name="room" onChange={e => setRoom(e.target.value)} />
+     <div className="form-group" ><input className="form-control form-control-user" type="email" placeholder="Your Business Email" required /></div>
+     <div className="form-group" ><input className="form-control form-control-user" type="number" placeholder="Your Sin Number" onChange={e => setSin(e.target.value)} required /></div>
+     <div className="form-group" ><input className="form-control form-control-user" type="number" placeholder="Room Number" onChange={e => setRoom(e.target.value)} required /></div>
+     <div className="form-group row">
+      <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" type="text" placeholder="City" onChange={e => setCity(e.target.value)} /></div>
+      <div className="col-sm-6"><input className="form-control form-control-user" type="text" placeholder="Country" onChange={e => setCountry(e.target.value)} /></div>
      </div>
-     <div className="form-group">
-      <label htmlFor="start">Start date:</label>
+
+     <div className="form-group row">
+      <label className="col-sm-6 mb-3 mb-sm-0" htmlFor="">Check In Date</label>
+      <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" defaultValue="2018-07-22" type="date" onChange={e => setStart(e.target.value)} /></div>
       <br />
-      <input type="date" id="start" name="start" defaultValue="2018-07-22" min="2018-01-01" max="2038-12-31" onChange={e => setStart(e.target.value)} />
       <br />
-      <br />
-      <label htmlFor="start">End date:</label>
-      <br />
-      <input type="date" id="start" name="end" defaultValue="2018-07-22" min="2018-01-01" max="2038-12-31" onChange={e => setEnd(e.target.value)} />
-      <br />
+      <label className="col-sm-6 mb-3 mb-sm-0" htmlFor="">Check In Date</label>
+      <div className="col-sm-6"><input className="form-control form-control-user" type="date" defaultValue="2018-07-22" onChange={e => setEnd(e.target.value)} /></div>
      </div>
-     <button type="submit" className="btn btn-primary">Confirm Renting</button>
+
+
+     <div className="col-sm-6 mb-3 mb-sm-0"><button className="btn btn-primary  text-white btn-user" type="submit" style={{ padding: "None" }} >Confirm Booking</button></div>
+
+
+
     </form>
    </div>
   </>
