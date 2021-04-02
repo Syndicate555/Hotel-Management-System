@@ -87,7 +87,7 @@ app.post("/payment-confirm", async (req, res) => {
 })
 
 
-// get all todos 
+// Fetch all data on rooms from the postgresql database
 app.get("/rooms", async (req, res) => {
  try {
   const allRooms = await pool.query("SELECT * FROM ehotel.room WHERE status = 'available'")

@@ -72,7 +72,7 @@ function RoomSearch() {
                                           <tr>
                                                  <th>Room Number</th>
                                                  <th>Capacity</th>
-                                                 <th>Mountain/Ocean view Available</th>
+                                                 <th>Mountain/Ocean view available</th>
                                                  <th>Price/night</th>
                                                  <th></th>
                                           </tr>
