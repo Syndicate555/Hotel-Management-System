@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md'
 
 
-const CustomerBooking = ({ showModal, setShowModal }) => {
+const CustomerBooking = () => {
  const [ sin, setSin ] = useState(0)
  const [ fname, setFname ] = useState("")
  const [ lname, setLname ] = useState("")
@@ -33,7 +33,7 @@ const CustomerBooking = ({ showModal, setShowModal }) => {
    });
    console.log(body)
 
-   window.location = "/customer-registration";
+   window.location = "/";
   } catch (err) {
    console.error(err.message);
 

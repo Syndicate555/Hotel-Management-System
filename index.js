@@ -63,7 +63,7 @@ app.post("/customer-booking", async (req, res) => {
   let year = date_ob.getFullYear();
   const rdate = year + "-" + month + "-" + date
   const newCustomer = await pool.query("INSERT into ehotel.customer (ssn_sin,fname,lname,registration_date,city,country) values($1,$2,$3,$4,$5,$6)  ", [ sin, fname, lname, rdate, city, country ])
-  const newRent = await pool.query("UPDATE ehotel.room SET status = 'booked',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
+  const newRent = await pool.query("UPDATE ehotel.room SET status = 'booked' WHERE room_num = $1  ", [ room ])
   res.send("The Customer has been registered!")
   console.log(req.body)
  } catch (error) {
