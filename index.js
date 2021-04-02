@@ -42,7 +42,7 @@ app.post("/customer-register", async (req, res) => {
   let date = ("0" + date_ob.getDate()).slice(-2);
   let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
   let year = date_ob.getFullYear();
-  const rdate = year + "-" + month + "-" + date
+  const rdate = year + "/" + month + "/" + date
   const newCustomer = await pool.query("INSERT into ehotel.customer (ssn_sin,fname,lname,registration_date,city,country) values($1,$2,$3,$4,$5,$6)  ", [ sin, fname, lname, rdate, city, country ])
   const newRent = await pool.query("UPDATE ehotel.room SET status = 'rented', pending_balance = 'true', start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
   res.send("The Customer has been registered!")

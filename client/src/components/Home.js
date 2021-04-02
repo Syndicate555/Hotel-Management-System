@@ -25,11 +25,16 @@ const Home = () => {
           <div className="form-group"><a href="/customer-payment" className="btn btn-primary  text-white btn-user" type="submit" style={{ background: '#3bb1e3', border: "none", outline: "none", boxShadow: "none", width: "100%" }}>Enter Customer Payment</a></div>
          </form>
 
+
         </div>
        </div>
       </div>
      </div>
     </div>
+    <footer style={{ textAlign: "center" }}>
+     Created by <a href="https://www.saffataziz.site/" target="_blank"> Saffat Aziz</a>
+    </footer>
+
    </div>
 
 

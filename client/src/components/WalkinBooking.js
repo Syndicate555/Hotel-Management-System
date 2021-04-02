@@ -31,7 +31,7 @@ const WalkinBooking = () => {
    });
    console.log(body)
 
-   window.location = "/customer-register";
+   window.location = "/";
   } catch (err) {
    console.error(err.message);
 
