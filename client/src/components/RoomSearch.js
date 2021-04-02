@@ -86,7 +86,7 @@ function RoomSearch() {
                                                         <td>{room.view}</td>
                                                         <td>${room.price}</td>
 
-                                                        <td>
+                                                        <td key={room.hotel_id.toString()}>
                                                                <Button onClick={openModal}>Book Room</Button>
                                                                <CustomerBooking showModal={showModal} setShowModal={setShowModal} />
                                                                <GlobalStyle />
