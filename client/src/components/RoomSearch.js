@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styled from 'styled-components';
 import { GlobalStyle } from './globalStyles';
-
+import CustomerBooking from './CustomerBooking'
 const Button = styled.button`
   min-width: 70px;
   padding: 10px 32px;
@@ -88,6 +88,8 @@ function RoomSearch() {
 
                                                         <td>
                                                                <Button onClick={openModal}>Book Room</Button>
+                                                               <CustomerBooking showModal={showModal} setShowModal={setShowModal} />
+                                                               <GlobalStyle />
                                                         </td>
                                                  </tr>
                                           ))}

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useRef, useEffect, useCallback } from 'react';
+import { useSpring, animated } from 'react-spring';
+import styled from 'styled-components';
+import { MdClose } from 'react-icons/md'
 
-const CustomerBooking = () => {
+const CustomerBooking = ({ showModal, setShowModal }) => {
  return (
-  <div>
-   <h1>Customer Booking</h1>
-
-  </div>
+  <>
+   {showModal ? <div>Test</div> : null}
+  </>
  )
 }
 
