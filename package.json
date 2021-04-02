@@ -8,8 +8,7 @@
     "server": "nodemon index.js",
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
-    "dev": "concurrently \"npm run server\" \" npm run client\"",
-    "postinstall": "node ./scripts/post-install.js"
+    "dev": "concurrently \"npm run server\" \" npm run client\""
   },
   "repository": {
     "type": "git",
