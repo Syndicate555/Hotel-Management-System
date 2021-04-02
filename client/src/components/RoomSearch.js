@@ -69,9 +69,9 @@ function RoomSearch() {
                                                         <td>${room.price}</td>
 
                                                         <td>
-                                                               <button
+                                                               <a style={{ color: "white" }}
                                                                       className="btn btn-success">
-                                                                      Book Room</button>
+                                                                      Book Room</a>
                                                         </td>
                                                  </tr>
                                           ))}
