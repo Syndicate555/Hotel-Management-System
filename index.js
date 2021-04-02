@@ -16,6 +16,8 @@ app.use(cors())
 app.use(express.json()) // Lets us access req.body
 app.use(express.urlencoded({ extended: false }))
 
+
+// API endpoints
 //Routes//
 
 // Employee will confirm the booking of a customer after they arrive
@@ -31,6 +33,8 @@ app.post("/booking-confirm", async (req, res) => {
 
  }
 })
+
+// Employee rents a room for a walk in customer
 app.post("/customer-register", async (req, res) => {
  try {
   const { sin, fname, lname, city, country, room, start, end, } = req.body;
@@ -40,19 +44,39 @@ app.post("/customer-register", async (req, res) => {
   let year = date_ob.getFullYear();
   const rdate = year + "-" + month + "-" + date
   const newCustomer = await pool.query("INSERT into ehotel.customer (ssn_sin,fname,lname,registration_date,city,country) values($1,$2,$3,$4,$5,$6)  ", [ sin, fname, lname, rdate, city, country ])
-  const newRent = await pool.query("UPDATE ehotel.room SET status = 'rented',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
+  const newRent = await pool.query("UPDATE ehotel.room SET status = 'rented', pending_balance = 'true', start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
   res.send("The Customer has been registered!")
   console.log(req.body)
  } catch (error) {
   console.error(error.message)
-
  }
 })
 
+
+// Customer books the room online
+app.post("/customer-booking", async (req, res) => {
+ try {
+  const { sin, fname, lname, city, country, room, start, end, } = req.body;
+  let date_ob = new Date();
+  let date = ("0" + date_ob.getDate()).slice(-2);
+  let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+  let year = date_ob.getFullYear();
+  const rdate = year + "-" + month + "-" + date
+  const newCustomer = await pool.query("INSERT into ehotel.customer (ssn_sin,fname,lname,registration_date,city,country) values($1,$2,$3,$4,$5,$6)  ", [ sin, fname, lname, rdate, city, country ])
+  const newRent = await pool.query("UPDATE ehotel.room SET status = 'booked',  start_date = $1 , end_date = $2 WHERE room_num = $3  ", [ start, end, room ])
+  res.send("The Customer has been registered!")
+  console.log(req.body)
+ } catch (error) {
+  console.error(error.message)
+ }
+})
+
+
+// Employee enters payment information for the customer
 app.post("/payment-confirm", async (req, res) => {
  try {
   const { room } = req.body;
-  const newRent = await pool.query("UPDATE ehotel.room SET pending_balance = 'true' WHERE room_num = $1  ", [ room ])
+  const newRent = await pool.query("UPDATE ehotel.room SET pending_balance = 'false' WHERE room_num = $1  ", [ room ])
   res.send("The Payment for the customer has been received")
   console.log(req.body)
  } catch (error) {
@@ -88,28 +112,4 @@ app.listen(PORT, () => {
  console.log(`Server has started on PORT ${PORT}`)
 
 })
-// const xhttp = new XMLHttpRequest();
-// xhttp.open("GET", "http://localhost:3000/rooms", false);
-// xhttp.send();
-// const rooms = xhttp.responseText;
-// console.log(rooms)
 
-// axios.get('http://localhost:3000/rooms')
-//  .then(function (response) {
-//   console.log(response.json())
-//  })
-//  .catch(function (error) {
-//   // handle error
-//   console.log(error);
-//  })
-
-// const getRooms = async () => {
-//  try {
-//   const response = await fetch("http://localhost:3000/rooms");
-//   const jsonData = await response.json();
-
-//   console.log(jsonData)
-//  } catch (err) {
-//   console.error(err.message);
-//  }
-// }
