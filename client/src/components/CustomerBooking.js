@@ -83,7 +83,24 @@ const CustomerBooking = ({ showModal, setShowModal }) => {
 
  return (
   <>
-   {showModal ? <div>Test</div> : null}
+   {showModal ? (
+    <Background onClick={closeModal} ref={modalRef}>
+     <animated.div style={animation}>
+      <ModalWrapper showModal={showModal}>
+
+       <ModalContent>
+        <h1>Are you ready?</h1>
+        <p>Get exclusive access to our next launch.</p>
+        <button>Join Now</button>
+       </ModalContent>
+       <CloseModalButton
+        aria-label='Close modal'
+        onClick={() => setShowModal(prev => !prev)}
+       />
+      </ModalWrapper>
+     </animated.div>
+    </Background>
+   ) : null}
   </>
  )
 }
