@@ -1,6 +1,4 @@
 -- SQL Commands
-
-
 -- ***************************************
 -- Hotel Chain Table Creation
 -- ****************************************
@@ -22,13 +20,9 @@ PHONE_NUMBER VARCHAR(20),
 TOTAL_HOTELS INT,
 CONSTRAINT PK_HOTEL_CHAIN PRIMARY KEY(NAME)
 );
-
-
 -- ***************************************
 -- Hotel Table Creation
 -- ****************************************
-
-
 /*Create Hotel Table*/
 CREATE TABLE HOTEL(
 HOTEL_ID INT NOT NULL,
