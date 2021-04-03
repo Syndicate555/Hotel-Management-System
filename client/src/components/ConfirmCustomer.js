@@ -20,7 +20,7 @@ const ConfirmCustomer = () => {
    });
    console.log(body)
 
-   window.location = "/customer-registration";
+   window.location = "/";
   } catch (err) {
    console.error(err.message);
 
