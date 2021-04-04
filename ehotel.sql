@@ -1,8 +1,8 @@
 -- SQL Commands
+
 -- ***************************************
 -- Hotel Chain Table Creation
 -- ****************************************
-
 
 SET SEARCH_PATH = "ehotel";
 
