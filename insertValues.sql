@@ -542,12 +542,9 @@ INSERT INTO ROOM VALUES (488, 48,  'available',6, 500, 'yes', 'no', null, null, 
 INSERT INTO ROOM VALUES (489, 48,  'available',5, 450, 'no', 'yes', null, null, false);
 INSERT INTO ROOM VALUES (490, 48,  'available',4, 400, 'yes', 'no', null, null, false);
 
-
-
 -- *******************************
 -- Inserting Values Hotel_Chain 
 -- *******************************
-
 
 INSERT INTO HOTEL_CHAIN VALUES ('Ritz','Rideau Street',16,'Ottawa','Ontario','K1N 5K0', 'Canada', 'Ritz@gmail.com','289-516-8765',8);
 INSERT INTO HOTEL_CHAIN VALUES ('Mariot','Sam Street',30,'New York','New York','5HG 674', 'United States', 'Mariot@gmail.com','675-876-9042',8);
@@ -555,9 +552,6 @@ INSERT INTO HOTEL_CHAIN VALUES ('Hotel Plaza','Williams Street',27,'London','Eng
 INSERT INTO HOTEL_CHAIN VALUES ('Night Inn','Wallaby Street',8,'Kansas City','Kansas','3JR 978', 'United States', 'NightInn@gmail.com','234-456-8765',8);
 INSERT INTO HOTEL_CHAIN VALUES ('Best Western','Ottawa Street',5,'Vancouver','British Columbia','8PH 453', 'Canada', 'BestWestern@gmail.com','123-678-9023',8);
 INSERT INTO HOTEL_CHAIN VALUES ('Andaz','325 Dalhousie Street',5,'Ottawa','Ontario','M3A 2G1', 'Canada', 'andaz123@gmail.com','123-456-7890',8);
-
-
-
 
 -- ************************************************
 -- Inserting Values Hotel -> 8 Hotels per Chain
