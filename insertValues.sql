@@ -801,7 +801,7 @@ INSERT INTO EMPLOYEE VALUES ('87570421', 'Minda01', 'RSLYZe', 45, 'Minda', 'Prio
 INSERT INTO EMPLOYEE VALUES ('10231153', 'Pam01', 'cMDARZ', 45, 'Pam', 'Suiter', 'Hotel Clerk', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 50000);
 INSERT INTO EMPLOYEE VALUES ('76453370', 'Kenny01', 'VvKkIV', 45, 'Kenny', 'Finck', 'Casino Host', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 50000);
 
-INSERT INTO EMPLOYEE VALUES ('32829102', 'Lamia01', 'TzTIHp', 46, 'Lamia', 'Anjum', 'Manager', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 50000);
+INSERT INTO EMPLOYEE VALUES ('32829101', 'Lamia01', 'TzTIHp', 46, 'Lamia', 'Anjum', 'Manager', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 50000);
 INSERT INTO EMPLOYEE VALUES ('71500955', 'Maisha01', 'JZqrh8', 46, 'Maisha', 'Mustanzir', 'Chef', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 50000);
 INSERT INTO EMPLOYEE VALUES ('41898959', 'Tashin01', 'ebHPyD', 46, 'Tashin', 'Rodoshi', 'Hotel Clerk', 'Rockline Avenue', 5, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 50000);
 
