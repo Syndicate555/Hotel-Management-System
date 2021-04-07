@@ -820,7 +820,7 @@ INSERT INTO EMPLOYEE VALUES ('71121008', 'David01', 'GqucFd', 48, 'David', 'Lui'
 
 
 INSERT INTO CUSTOMER VALUES ('102618', 'Autumn01', 'Hasan', 'Shahzad', 2021/03/29, 'Jasmine',  405, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 4, 5, null);
-INSERT INTO CUSTOMER VALUES ('32618', 'Autumn01', 'Taha', 'Shahzad', 2021/03/29, 'Jasmine',  405, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 9, 3, null);
+INSERT INTO CUSTOMER VALUES ('32618', 'Autumn03', 'Taha', 'Shahzad', 2021/03/29, 'Jasmine',  405, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 9, 3, null);
 INSERT INTO CUSTOMER VALUES ('40218', 'Autumn01', 'Adam', 'Shahzad', 2021/03/29, 'Jasmine',  405, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 14, 4, null);
 INSERT INTO CUSTOMER VALUES ('50418', 'Autumn01', 'Teja', 'Police', 2021/03/29, 'Jasmine',  405, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 21, 3, null);
 INSERT INTO CUSTOMER VALUES ('62618', 'Autumn01', 'Mahmoud', 'Adel', 2021/03/29, 'Jasmine',  405, 'Ottawa', 'Ontario', 'K2S 5Jl', 'Canada', 29, 4, null);
