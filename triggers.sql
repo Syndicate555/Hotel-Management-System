@@ -1,13 +1,25 @@
-CREATE OR REPLACE TRIGGER year_check
+CREATE TRIGGER year_check
  BEFORE INSERT OR UPDATE ON ROOM  
  FOR EACH ROW
 
- SELECT RIGHT(:ROOM.start_date, 2) as ExtractString;
- if (ExtractString != '21')
+ SELECT RIGHT(:ROOM.start_date, 2) as StartYear;
+ if (StartYear < '21')
  Then
   RAISE_APPLICATION_ERROR(
    -20001,
-   'Booking only valid for 2021'
+   'Start Date cannot be before 2021');
   END IF;
 END;
-  )
+
+
+CREATE OR REPLACE TRIGGER salary_max
+ BEFORE INSERT or UPDATE on EMPLOYEE
+ FOR EACH ROW
+BEGIN
+ IF(:EMPLOYEE.salary > 100000 )
+ Then
+  RAISE_APPLICATION_ERROR(
+    -20001,
+    'The Salary is too much');
+  END IF;
+END;
